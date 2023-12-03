@@ -256,6 +256,7 @@ border-radius: 0.5rem;
     font-weight: bolder;
     color: white;
     background-color: #35316a;
+    padding: 1rem 1.5rem;
 }
 .submit-btn:hover{
     color: #7774b7;
