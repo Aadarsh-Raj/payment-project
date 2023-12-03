@@ -335,5 +335,7 @@ border-radius: 0.5rem;
     height: 40px;
     border-radius: 20%;
 }
-
+.footer{
+  padding: 0.2rem;
+}
 }
