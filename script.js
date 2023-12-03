@@ -5,11 +5,11 @@ const formContainer = document.querySelector(".user-form-container");
 
 const closeFormContainer = document.querySelector(".top-right");
 const donateBtn = document.querySelectorAll(".donate-btn");
-closeFormContainer.addEventListener("click", ()=>{
-    formContainer.style.display = "none";
-})
+// closeFormContainer.addEventListener("click", ()=>{
+//     formContainer.style.display = "none";
+// })
 const logoAnime = () =>{
-    const logotxt = "Arya Funds"
+    const logotxt = "ARYA Funds"
     logo.innerText = "";
     let index = 0;
     
