@@ -3,7 +3,6 @@ const form = document.querySelector("form");
 form.addEventListener("keyup", async () => {
   const amountToBePaid = form.children[1].value;
   try {
-    const amountToBePaid = 500; // Replace with your actual amount
     const response = await fetch("https://api.razorpay.com/v1/orders", {
       method: "POST",
       headers: {
