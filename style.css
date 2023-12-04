@@ -38,11 +38,6 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.mobile-view{
-  display: none;
-  background-color: transparent;
-  color: white;
-}
 a:hover{
     color: silver;
 }
@@ -332,14 +327,14 @@ border-radius: 0.5rem;
 
     }
     .laptop-view{
-      display: none;
+      flex-direction: column;
+      text-align: center;
     }
-.mobile-view{
-  display: initial;
+.header{
+  padding: 1.5rem;
 }
 .nav{
   width:20%;
-  
 }
 .top{
     display: flex;
