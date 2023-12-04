@@ -1,14 +1,14 @@
 const form = document.querySelector("form");
 
 form.addEventListener("keyup", ()=>{
-  const amountToBePaid = form.children[1].value;
+  let amountToBePaid = form.children[1].value;
 initializeRazorpay(amountToBePaid);
 
 });
 function initializeRazorpay(amountToBePaid) {
   var options = {
     key: 'rzp_test_KMSATkL0yiCOMy',
-    amount: amountToBePaid,
+    amount: amountToBePaid * 100,
     currency: 'INR',
     name: 'Arya Funds',
     description: 'Payment for your product or service',
@@ -27,9 +27,9 @@ function initializeRazorpay(amountToBePaid) {
     theme: {
       color: '#191734',
     },
-    price: amountToBePaid,
   };
   var rzp = new Razorpay(options);
+ 
   document.getElementById('rzp-button1').onclick = function (e) {
     if(amountToBePaid < 100){
       alert("Minimum value should be 100");
