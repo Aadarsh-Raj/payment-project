@@ -1,66 +1,41 @@
 const form = document.querySelector("form");
 
-form.addEventListener("keyup", async () => {
+form.addEventListener("keyup", ()=>{
   const amountToBePaid = form.children[1].value;
-  try {
-    const response = await fetch("https://api.razorpay.com/v1/orders", {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa("rzp_test_KMSATkL0yiCOMy:5jkLJ3oTM1crFcpOUK97ieNJ"),
-      },
-      body: JSON.stringify({
-        amount: amountToBePaid,
-        currency: "INR",
-        receipt: "qwsaq1",
-        partial_payment: true,
-        first_payment_min_amount: 230,
-      }),
-    });
-    const responseData = await response.json();
-    console.log(responseData);
-  } catch (error) {
-    console.error(error);
-  }
-  const data = await response.json();
+initializeRazorpay(amountToBePaid);
+
+});
+function initializeRazorpay(amountToBePaid) {
   var options = {
-    key: "rzp_test_KMSATkL0yiCOMy", // Enter the Key ID generated from the Dashboard
-    amount: amountToBePaid, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-    currency: "INR",
-    name: "Acme Corp", //your business name
-    description: "Test Transaction",
-    image: "https://example.com/your_logo",
-    order_id: "order_N7vF84db6hTNly", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    key: 'rzp_test_KMSATkL0yiCOMy',
+    amount: amountToBePaid,
+    currency: 'INR',
+    name: 'Arya Funds',
+    description: 'Payment for your product or service',
+    image: 'https://scalebranding.com/wp-content/uploads/2022/02/Thunder-Lion-Energy-Logo.jpg',
     handler: function (response) {
-      alert(response.razorpay_payment_id);
-      alert(response.razorpay_order_id);
-      alert(response.razorpay_signature);
+      // alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
     },
     prefill: {
-      //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
-      name: "Aadarsh Raj", //your customer's name
-      email: "aryaraj.dev.js@gmail.com",
-      contact: "9000090000", //Provide the customer's phone number for better conversion rates
+      name: 'Aadarsh Raj',
+      email: 'aryaraj.dev.js.com',
+      contact: '9876543210',
     },
     notes: {
-      address: "Razorpay Corporate Office",
+      address: 'Razorpay Corporate Office',
     },
     theme: {
-      color: "#3399cc",
+      color: '#191734',
     },
+    price: amountToBePaid,
   };
-  var rzp1 = new Razorpay(options);
-  rzp1.on("payment.failed", function (response) {
-    alert(response.error.code);
-    alert(response.error.description);
-    alert(response.error.source);
-    alert(response.error.step);
-    alert(response.error.reason);
-    alert(response.error.metadata.order_id);
-    alert(response.error.metadata.payment_id);
-  });
-  document.getElementById("rzp-button1").onclick = function (e) {
-    rzp1.open();
+  var rzp = new Razorpay(options);
+  document.getElementById('rzp-button1').onclick = function (e) {
+    if(amountToBePaid < 100){
+      alert("Minimum value should be 100");
+      return;
+    }
+    rzp.open();
     e.preventDefault();
   };
-});
+}

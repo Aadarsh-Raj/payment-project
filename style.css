@@ -32,8 +32,16 @@ a {
 }
 .nav {
   width: 36%;
+}
+.laptop-view{
+  width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.mobile-view{
+  display: none;
+  background-color: transparent;
+  color: white;
 }
 a:hover{
     color: silver;
@@ -290,6 +298,16 @@ border-radius: 0.5rem;
     .animated-btn{
         width: auto;
     }
+    .card-item{
+      flex-basis: 30%;
+    }
+    .user-form-container{
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      color: #312f5b;
+  
+  }
     .footer{
         flex-direction: column;
         gap: 1rem;
@@ -313,13 +331,15 @@ border-radius: 0.5rem;
         gap: 1rem;
 
     }
-    
-.user-form-container{
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    color: #312f5b;
-
+    .laptop-view{
+      display: none;
+    }
+.mobile-view{
+  display: initial;
+}
+.nav{
+  width:20%;
+  
 }
 .top{
     display: flex;
