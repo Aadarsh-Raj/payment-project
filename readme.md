@@ -1,7 +1,12 @@
 # Hosted Link -> <a href="https://aadarsh-raj.github.io/payment-project/index.html">Click Here</a>
 
 ## UI 
+![image](https://github.com/Aadarsh-Raj/payment-project/assets/74525154/824404d5-0f43-4c6a-8a7c-4f467eef80c5)
+<br>
+![image](https://github.com/Aadarsh-Raj/payment-project/assets/74525154/e4f3feb7-6699-4de0-8f62-a4a9ca950958)
 
+<br>
+![image](https://github.com/Aadarsh-Raj/payment-project/assets/74525154/dfd9be57-8ae5-45dc-8a68-3e0accee2c1d)
 
 
 
