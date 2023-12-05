@@ -138,6 +138,7 @@ a:hover{
   max-width: fit-content;
   flex-basis: 20%;
   border-radius: 0.8rem;
+  height: max-content;
 }
 .card-upper img {
   width: 100%;
