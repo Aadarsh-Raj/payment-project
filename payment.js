@@ -17,7 +17,7 @@ function initializeRazorpay(amountToBePaid) {
     prefill: {
       name: 'Aadarsh Raj',
       email: 'aryaraj.dev.js.com',
-      contact: '9876543210',
+      contact: `${Math.floor(1000000000 + Math.random() * 9000000000)}`,
     },
     notes: {
       address: 'Razorpay Corporate Office',

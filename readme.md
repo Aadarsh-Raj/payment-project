@@ -7,7 +7,7 @@
 
 <br>
 ![image](https://github.com/Aadarsh-Raj/payment-project/assets/74525154/dfd9be57-8ae5-45dc-8a68-3e0accee2c1d)
-
+<br>
 
 
 ## Description
