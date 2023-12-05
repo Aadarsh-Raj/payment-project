@@ -1,9 +1,7 @@
 const form = document.querySelector("form");
-
 form.addEventListener("keyup", ()=>{
-  let amountToBePaid = form.children[1].value;
+  const amountToBePaid = form.children[1].value;
 initializeRazorpay(amountToBePaid);
-
 });
 function initializeRazorpay(amountToBePaid) {
   var options = {
@@ -29,7 +27,6 @@ function initializeRazorpay(amountToBePaid) {
     },
   };
   var rzp = new Razorpay(options);
- 
   document.getElementById('rzp-button1').onclick = function (e) {
     if(amountToBePaid < 100){
       alert("Minimum value should be 100");

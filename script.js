@@ -25,10 +25,10 @@ const logoAnime = () =>{
 }
 logoAnime();
 function changeText(){
-    animatedBtn.innerText ="FEEL GOOD LATER";
+    animatedBtn.innerText ="FEEL GOOD TO DONATE";
 }
 function resetText(){
-    animatedBtn.innerText = "DONATE NOW";
+    animatedBtn.innerText = "CLICK HERE";
 }
 animatedBtn.addEventListener("click",()=>{
     const heart = document.createElement("div");
