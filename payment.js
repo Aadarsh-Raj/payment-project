@@ -1,9 +1,17 @@
-const form = document.querySelector("form");
+const form = document.querySelector("form"); // Selecting the form element
+
+// Event listener for keyup event inside the form
 form.addEventListener("keyup", ()=>{
+  // Retrieving the entered value for amount to be paid
   const amountToBePaid = form.children[1].value;
+  // Initializing Razorpay with the entered amount
 initializeRazorpay(amountToBePaid);
 });
+
+// Function to initialize Razorpay with payment options
 function initializeRazorpay(amountToBePaid) {
+  // Payment options for Razorpay
+  
   var options = {
     key: 'rzp_test_KMSATkL0yiCOMy',
     amount: amountToBePaid * 100,
@@ -14,6 +22,7 @@ function initializeRazorpay(amountToBePaid) {
     handler: function (response) {
       // alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
     },
+    // user detail can be manipulated using logged in user's detail
     prefill: {
       name: 'Aadarsh Raj',
       email: 'aryaraj.dev.js.com',
@@ -26,13 +35,15 @@ function initializeRazorpay(amountToBePaid) {
       color: '#191734',
     },
   };
+   // Creating a new Razorpay instance with the provided options
   var rzp = new Razorpay(options);
   document.getElementById('rzp-button1').onclick = function (e) {
+    // Event listener for button click to initiate payment
     if(amountToBePaid < 100){
-      alert("Minimum value should be 100");
+      alert("Minimum value should be 100");// Alert if amount is less than 100
       return;
     }
-    rzp.open();
-    e.preventDefault();
+    rzp.open(); // Opening Razorpay payment popup
+    e.preventDefault();// Preventing default button click behavior
   };
 }
