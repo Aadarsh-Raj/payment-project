@@ -13,7 +13,7 @@ function initializeRazorpay(amountToBePaid) {
   // Payment options for Razorpay
   
   var options = {
-    key: 'rzp_test_KMSATkL0yiCOMy',
+    key: 'rzp_test_EWnKpBs49MC8ce',
     amount: amountToBePaid * 100,
     currency: 'INR',
     name: 'Arya Funds',
